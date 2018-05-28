@@ -27,7 +27,7 @@ cp $txt $local/FichierIso/isolinux/isolinux.cfg
 cd $local/FichierIso
 genisoimage -r -J -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o preseed_test.iso .
 #mkisofs -J -r -v -o $local/preseed_test.iso -V Solibuntu -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table $local/FichierIso
-
+mv preseed_test $local
 # Supprime le dossier "FichierIso devenu inutile"
 cd $local/
 rm -rf FichierIso/
