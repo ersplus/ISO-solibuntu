@@ -24,11 +24,19 @@ cp -av /mnt/. $local/squashfs
 # Démonte le squashfs
 umount /mnt
 
+#-----------------------------------------------------------
+# Modification du système de fichier préinstallé ici
+#-----------------------------------------------------------
+
 # Rajoute le dossier Solibuntu
 mkdir $local/squashfs/Solibuntu/
 
 # Déplace le script de post install dans le dossier Solibuntu
 cp $pi $local/squashfs/Solibuntu/install.sh
+
+#-----------------------------------------------------------
+# Fin des modifications du système de fichier préinstallé
+#-----------------------------------------------------------
 
 # Efface l'ancien filesystem
 rm $local/FichierIso/casper/filesystem.squashfs
