@@ -6,6 +6,9 @@ preseed=$2
 txt=$3
 pi=$4
 
+echo "Les paquets suivants doivent être installés : \n"
+echo "squashfs-tools schroot genisoimage"
+
 # Définit dans quel dossier est exécuté le script
 local=`pwd`
 
