@@ -4,7 +4,8 @@
 iso=$1
 preseed=$2
 txt=$3
-pi=$4
+postInstall=$4
+preInstall=$5
 
 echo "Les paquets suivants doivent être installés : \n"
 echo "squashfs-tools schroot genisoimage"
@@ -54,6 +55,9 @@ cp $preseed $local/FichierIso/preseed/xubuntu.seed
 
 # Remplace le fichier isolinux.cfg par notre fichier
 cp $txt $local/FichierIso/isolinux/isolinux.cfg
+
+# Déplace le script de pre install
+cp $preInstall $local/FichierIso/preInstall.sh
 
 # Régénère une nouvelle somme de contrôle MD5
 cd $local/FichierIso
