@@ -1,6 +1,7 @@
-zenity --list --radiolist --width=500 \
---text "Installer Solibuntu entrainera la perte de toutes vos données non-sauvegardées, voulez-vous continuer ?" \
---column "Sélectionner" --column "Options" TRUE "Oui" FALSE "Non"
-if [ $? == "Non" ] ; then 
-	shutdown 0 
+zenity --question --text="Installer Solibuntu entraînera la perte de toutes vos \
+données n'ayant pas été sauvegardées, désirez-vous toujours l'Installer ?" \
+--ok-label "Oui, continuer" --cancel-label="Non, arrêter l'installation"
+
+if [ $? == 1 ] ; then 
+	poweroff
 fi
