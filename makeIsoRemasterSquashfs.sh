@@ -36,7 +36,7 @@ umount /mnt
 mkdir $local/squashfs/Solibuntu/
 
 # Déplace le script de post install dans le dossier Solibuntu
-cp $pi $local/squashfs/Solibuntu/install.sh
+cp $postInstall $local/squashfs/Solibuntu/install.sh
 
 #-----------------------------------------------------------
 # Fin des modifications du système de fichier préinstallé
