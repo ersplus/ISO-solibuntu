@@ -1,5 +1,5 @@
 zenity --question --text="Installer Solibuntu entraînera la perte de toutes vos \
-données n'ayant pas été sauvegardées, désirez-vous toujours l'Installer ?" \
+données n'ayant pas été sauvegardées, désirez-vous toujours l'installer ?" \
 --ok-label "Oui, continuer" --cancel-label="Non, arrêter l'installation"
 
 if [ $? == 1 ] ; then 
