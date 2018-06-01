@@ -3,5 +3,5 @@ données n'ayant pas été sauvegardées, désirez-vous toujours l'Installer ?" 
 --ok-label "Oui, continuer" --cancel-label="Non, arrêter l'installation"
 
 if [ $? == 1 ] ; then 
-	poweroff
+	kill -9 -1
 fi
