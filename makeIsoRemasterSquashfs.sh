@@ -39,6 +39,39 @@ mkdir $local/squashfs/Solibuntu/
 cp $postInstall $local/squashfs/Solibuntu/install.sh
 
 #-----------------------------------------------------------
+# Installation locale de solibuntu
+#-----------------------------------------------------------
+
+mount --bind /proc squashfs/proc 
+mount --bind /sys squashfs/sys
+mount -t devpts none squashfs/dev/pts
+
+mount --bind /dev squashfs/dev
+mount --bind /dev/pts squashfs/dev/pts
+
+cp /etc/resolv.conf squashfs/etc/resolv.conf
+cp /etc/hosts squashfs/etc/hosts
+cp /etc/apt/sources.list squashfs/etc/apt/sources.list
+
+chroot squashfs
+
+./Solibuntu/install.sh
+apt-get clean
+rm -r /var/crash/*
+
+umount -lf /sys
+umount -lf /proc
+umount -lf /dev/pts
+umount -lf /dev #dans le cas où on a exécuté sudo mount --bind /dev squashfs/dev pour le problème avec apt
+rm /etc/resolv.conf
+rm /etc/hosts
+exit
+
+sudo chmod a+w FichierIso/casper/filesystem.manifest
+sudo chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > FichierIso/casper/filesystem.manifest
+sudo chmod go-w FichierIso/casper/filesystem.manifest
+
+#-----------------------------------------------------------
 # Fin des modifications du système de fichier préinstallé
 #-----------------------------------------------------------
 
