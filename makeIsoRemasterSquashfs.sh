@@ -63,6 +63,7 @@ umount -lf /dev/pts
 umount -lf /dev #dans le cas où on a exécuté sudo mount --bind /dev squashfs/dev pour le problème avec apt
 rm /etc/resolv.conf
 rm /etc/hosts
+nohup xterm &
 exit"
 
 sudo chmod a+w FichierIso/casper/filesystem.manifest
