@@ -15,6 +15,9 @@ repinstallation="/opt/borne"
 cd /opt/
 # Check branche dev
 wget https://github.com/bastlenoob/solibuntu/archive/Dev.zip
+useradd -m administrateur
+echo -e "AdminSolibuntu\nAdminSolibuntu" | passwd administrateur
+usermod -c "Administrateur Solibuntu" administrateur
 if [ $? == 0 ] ; then
 	#check branche master 
 	# wget https://github.com/ersplus/solibuntu/archive/master.zip
