@@ -63,18 +63,21 @@ cp /etc/resolv.conf squashfs/etc/resolv.conf
 cp /etc/hosts squashfs/etc/hosts
 cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
-bash "sudo chroot squashfs
-./Solibuntu/install.sh iso
-apt-get clean
-rm -r /var/crash/*
-umount -lf /sys
-umount -lf /proc
-umount -lf /dev/pts
-umount -lf /dev #dans le cas où on a exécuté sudo mount --bind /dev squashfs/dev pour le problème avec apt
-rm /etc/resolv.conf
-rm /etc/hosts
 nohup xterm &
-exit"
+
+bash "sudo chroot squashfs ; \
+./Solibuntu/install.sh iso ; \
+apt-get clean ; \
+rm -r /var/crash/* ; \
+umount -lf /sys ; \
+umount -lf /proc ; \
+umount -lf /dev/pts ; \
+umount -lf /dev ; \
+rm /etc/resolv.conf ; \
+rm /etc/hosts ; \
+exit ;"
+
+nohup xterm &
 
 sudo chmod a+w FichierIso/casper/filesystem.manifest
 sudo chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > FichierIso/casper/filesystem.manifest
