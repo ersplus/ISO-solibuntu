@@ -53,7 +53,7 @@ cp /etc/resolv.conf squashfs/etc/resolv.conf
 cp /etc/hosts squashfs/etc/hosts
 cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
-bash "chroot squashfs
+bash "sudo chroot squashfs
 ./Solibuntu/install.sh iso
 apt-get clean
 rm -r /var/crash/*
