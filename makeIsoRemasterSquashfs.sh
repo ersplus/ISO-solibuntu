@@ -14,7 +14,17 @@ echo "squashfs-tools schroot genisoimage"
 local=`pwd`
 
 # Décompresse l'iso dans le dossier "FichierIso"
-7z x -o$local/FichierIso $iso
+#7z x -o$local/FichierIso $iso
+mkdir $local/FichierIso
+
+# Monte l'iso
+mount -o loop $iso /mnt
+
+# Copie le contenu
+cp -av /mnt/. $local/FichierIso
+
+# Démonte /mnt
+umount /mnt
 
 # Crée le dossier squashfs
 mkdir $local/squashfs
