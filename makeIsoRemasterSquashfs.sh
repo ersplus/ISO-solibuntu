@@ -54,7 +54,7 @@ cp /etc/hosts squashfs/etc/hosts
 cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
 bash "chroot squashfs
-./Solibuntu/install.sh
+./Solibuntu/install.sh iso
 apt-get clean
 rm -r /var/crash/*
 umount -lf /sys
