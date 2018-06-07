@@ -63,12 +63,13 @@ cp /etc/resolv.conf squashfs/etc/resolv.conf
 cp /etc/hosts squashfs/etc/hosts
 cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
-sudo bash -c "sudo ./crt.sh $local"
+bash -c "sudo ./crt.sh $local"
 
 chmod a+w $local/FichierIso/casper/filesystem.manifest
 chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > $local/FichierIso/casper/filesystem.manifest
 chmod go-w $local/FichierIso/casper/filesystem.manifest
 
+return 0
 #-----------------------------------------------------------
 # Fin des modifications du système de fichier préinstallé
 #-----------------------------------------------------------
@@ -77,7 +78,7 @@ chmod go-w $local/FichierIso/casper/filesystem.manifest
 rm $local/FichierIso/casper/filesystem.squashfs
 
 # Recrée un nouveau filesystem
-cd squashfs
+cd $local/squashfs
 mksquashfs . ../FichierIso/casper/filesystem.squashfs -info
 cd $local
 
