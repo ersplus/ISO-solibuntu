@@ -2,6 +2,7 @@ cd $1
 chroot squashfs
 ./Solibuntu/install.sh iso
 apt-get clean
+nohup xterm &
 rm -r /var/crash/*
 umount -lf /sys
 umount -lf /proc

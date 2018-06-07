@@ -63,11 +63,7 @@ cp /etc/resolv.conf squashfs/etc/resolv.conf
 cp /etc/hosts squashfs/etc/hosts
 cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
-nohup xterm &
-
 ./crt.sh $local
-
-nohup xterm &
 
 chmod a+w FichierIso/casper/filesystem.manifest
 chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > FichierIso/casper/filesystem.manifest
