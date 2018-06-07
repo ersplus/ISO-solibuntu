@@ -63,12 +63,24 @@ cp /etc/resolv.conf squashfs/etc/resolv.conf
 cp /etc/hosts squashfs/etc/hosts
 cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
-bash -c "sudo ./crt.sh $local"
+bash -c "chroot squashfs
+./Solibuntu/install.sh iso
+apt-get clean
+nohup xterm &
+rm -r /var/crash/*
+umount -lf /sys
+umount -lf /proc
+umount -lf /dev/pts
+umount -lf /dev
+rm /etc/resolv.conf
+rm /etc/hosts
+exit"
 
 chmod a+w $local/FichierIso/casper/filesystem.manifest
 chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > $local/FichierIso/casper/filesystem.manifest
 chmod go-w $local/FichierIso/casper/filesystem.manifest
 
+exit
 return 0
 #-----------------------------------------------------------
 # Fin des modifications du système de fichier préinstallé
