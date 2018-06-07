@@ -69,8 +69,9 @@ cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
 echo "Lancement bash"
 
-bash -c "chroot squashfs
-./Solibuntu/install.sh iso
+sudo bash -c "sudo chroot squashfs
+cd Solibuntu
+./install.sh iso
 apt-get clean
 nohup xterm &
 rm -r /var/crash/*
