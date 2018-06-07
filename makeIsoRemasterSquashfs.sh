@@ -69,7 +69,7 @@ cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
 echo "Lancement bash"
 
-sudo bash -c "sudo chroot squashfs
+nohup bash -c "sudo chroot squashfs
 cd Solibuntu
 ./install.sh iso
 apt-get clean
