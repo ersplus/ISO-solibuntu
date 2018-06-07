@@ -71,6 +71,7 @@ echo "Lancement bash"
 
 nohup bash -c "sudo chroot squashfs
 cd Solibuntu
+xterm
 ./install.sh iso
 apt-get clean
 nohup xterm &
