@@ -89,6 +89,7 @@ cp $txt $local/FichierIso/isolinux/isolinux.cfg
 
 # Déplace le script de pre install
 cp $preInstall $local/FichierIso/preInstall.sh
+chmod +x $local/FichierIso/preInstall.sh
 
 # Régénère une nouvelle somme de contrôle MD5
 cd $local/FichierIso
