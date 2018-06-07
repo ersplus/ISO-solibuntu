@@ -46,22 +46,28 @@ umount /mnt
 mkdir $local/squashfs/Solibuntu/
 
 # Déplace le script de post install dans le dossier Solibuntu
-cp $postInstall $local/squashfs/Solibuntu/install.sh
+cp -v $postInstall $local/squashfs/Solibuntu/install.sh
 
 #-----------------------------------------------------------
 # Installation locale de solibuntu
 #-----------------------------------------------------------
 cd $local
 
+echo "Préparation du chroot"
+
+echo "Mount"
 mount --bind /proc squashfs/proc 
 mount --bind /sys squashfs/sys
 mount -t devpts none squashfs/dev/pts
 mount --bind /dev squashfs/dev
 mount --bind /dev/pts squashfs/dev/pts
 
+echo "Copie des fichiers de conf"
 cp /etc/resolv.conf squashfs/etc/resolv.conf
 cp /etc/hosts squashfs/etc/hosts
 cp /etc/apt/sources.list squashfs/etc/apt/sources.list
+
+echo "Lancement bash"
 
 bash -c "chroot squashfs
 ./Solibuntu/install.sh iso
@@ -76,12 +82,17 @@ rm /etc/resolv.conf
 rm /etc/hosts
 exit"
 
+echo "Fin du bash"
+
+echo "Edition du filesystem.manifest"
 chmod a+w $local/FichierIso/casper/filesystem.manifest
 chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > $local/FichierIso/casper/filesystem.manifest
 chmod go-w $local/FichierIso/casper/filesystem.manifest
 
-exit
-return 0
+echo "Exit temporaire nuhumber one"
+
+#exit
+#return 0
 #-----------------------------------------------------------
 # Fin des modifications du système de fichier préinstallé
 #-----------------------------------------------------------
@@ -93,6 +104,10 @@ rm $local/FichierIso/casper/filesystem.squashfs
 cd $local/squashfs
 mksquashfs . ../FichierIso/casper/filesystem.squashfs -info
 cd $local
+
+echo "Exit nuhumber two"
+exit
+return 0
 
 # Remplace le fichier "xubuntu.seed" par notre fichier de preseed
 cp $preseed $local/FichierIso/preseed/xubuntu.seed
