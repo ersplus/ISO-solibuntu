@@ -65,9 +65,9 @@ cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
 ./crt.sh $local
 
-chmod a+w FichierIso/casper/filesystem.manifest
-chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > FichierIso/casper/filesystem.manifest
-chmod go-w FichierIso/casper/filesystem.manifest
+chmod a+w $local/FichierIso/casper/filesystem.manifest
+chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > $local/FichierIso/casper/filesystem.manifest
+chmod go-w $local/FichierIso/casper/filesystem.manifest
 
 #-----------------------------------------------------------
 # Fin des modifications du système de fichier préinstallé
