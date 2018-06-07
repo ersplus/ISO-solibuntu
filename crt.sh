@@ -1,4 +1,4 @@
-chroot squashfs
+sudo chroot squashfs
 cd Solibuntu
 xterm
 ./install.sh iso
