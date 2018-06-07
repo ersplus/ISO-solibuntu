@@ -1,6 +1,7 @@
-cd $1
 chroot squashfs
-./Solibuntu/install.sh iso
+cd Solibuntu
+xterm
+./install.sh iso
 apt-get clean
 nohup xterm &
 rm -r /var/crash/*
@@ -10,4 +11,4 @@ umount -lf /dev/pts
 umount -lf /dev
 rm /etc/resolv.conf
 rm /etc/hosts
-exit
+exit"
