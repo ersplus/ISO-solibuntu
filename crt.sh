@@ -3,7 +3,7 @@ cd Solibuntu
 xterm
 ./install.sh iso
 apt-get clean
-nohup xterm &
+nohup xterm
 rm -r /var/crash/*
 umount -lf /sys
 umount -lf /proc
