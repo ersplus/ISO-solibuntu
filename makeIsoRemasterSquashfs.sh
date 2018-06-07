@@ -69,7 +69,7 @@ cp /etc/apt/sources.list squashfs/etc/apt/sources.list
 
 echo "Lancement bash"
 
-bash -c "./crt.sh"
+sudo bash -c "./crt.sh"
 
 echo "Fin du bash"
 
