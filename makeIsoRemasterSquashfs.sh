@@ -100,8 +100,6 @@ mksquashfs . ../FichierIso/casper/filesystem.squashfs -info
 cd $local
 
 echo "Exit nuhumber two"
-exit
-return 0
 
 # Remplace le fichier "xubuntu.seed" par notre fichier de preseed
 cp $preseed $local/FichierIso/preseed/xubuntu.seed
