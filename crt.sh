@@ -1,4 +1,4 @@
-chroot squashfs
+sudo chroot squashfs
 cd Solibuntu
 xterm
 ./install.sh iso
@@ -11,4 +11,4 @@ umount -lf /dev/pts
 umount -lf /dev
 rm /etc/resolv.conf
 rm /etc/hosts
-exit"
+exit
