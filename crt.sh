@@ -1,19 +1,19 @@
 sudo chroot squashfs
-echo "Après chroot"
+echo " ================================= Après chroot ========================================="
 cd Solibuntu
-echo "Avant install"
+echo " ================================= Avant install ========================================"
 ./install.sh iso
-echo "Après install"
+echo " ================================= Après install ========================================"
 apt-get clean
-echo "Après clean"
+echo " ================================== Après clean ========================================="
 rm -r /var/crash/*
-echo "Après supression cash"
+echo " ============================= Après supression cache ==================================="
 umount -lf /sys
 umount -lf /proc
 umount -lf /dev/pts
 umount -lf /dev
-echo "Après umount"
+echo " ================================== Après umount ======================================="
 rm /etc/resolv.conf
 rm /etc/hosts
-echo "Après supression fichiers conf"
+echo " ========================== Après supression fichiers conf =============================="
 exit
