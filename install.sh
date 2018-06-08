@@ -107,7 +107,7 @@ if [ $? == 0 ] ; then
 
 	# Installation de l'imprimante
 	apt-get install -y hplip hplip-data hplip-doc hpijs-ppds hplip-gui printer-driver-hpcups printer-driver-hpijs printer-driver-pxljr
-	#apt-get install printer-driver-cups-pdf
+	bash apt-get install printer-driver-cups-pdf &
 
 	# Installation de Gdebi pour résoudre les dépendances de l'installation de CTparental
 	apt-get install -y gdebi
