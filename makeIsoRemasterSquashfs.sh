@@ -91,8 +91,8 @@ echo "Exit temporaire nuhumber one"
 rm $local/FichierIso/casper/filesystem.squashfs
 
 echo "Exit nuhumber one bis"
-exit
-return 0
+#exit
+#return 0
 
 # Recrée un nouveau filesystem
 cd $local/squashfs
