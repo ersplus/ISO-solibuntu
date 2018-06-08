@@ -1,17 +1,17 @@
 #!/bin/bash
 
+# Définit dans quel dossier est exécuté le script
+local=`pwd`
+
 # Récupère l'iso, le fichier de preseed et le isolinux.cfg modifié
-iso=$1
-preseed=$2
-txt=$3
-postInstall=$4
-preInstall=$5
+iso="$local/xubuntu-18.04-desktop-amd64.iso"
+preseed="$local/preseed.cfg"
+txt="$local/text.cfg"
+postInstall="$local/install.sh"
+preInstall="$local/preInstall.sh"
 
 echo "Les paquets suivants doivent être installés : \n"
 echo "squashfs-tools schroot genisoimage"
-
-# Définit dans quel dossier est exécuté le script
-local=`pwd`
 
 # Décompresse l'iso dans le dossier "FichierIso"
 #7z x -o$local/FichierIso $iso
