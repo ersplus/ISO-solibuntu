@@ -16,11 +16,11 @@ cd /opt/
 # Check branche dev
 wget https://github.com/bastlenoob/solibuntu/archive/Dev.zip
 
-if [ $1 == "iso" ] ; then
-	useradd -m administrateur
-	echo -e "AdminSolibuntu\nAdminSolibuntu" | passwd administrateur
-	usermod -c "Administrateur Solibuntu" administrateur
-fi
+#if [ $1 == "iso" ] ; then
+	#useradd -m administrateur
+	#echo -e "AdminSolibuntu\nAdminSolibuntu" | passwd administrateur
+	#usermod -c "Administrateur Solibuntu" administrateur
+#fi
 if [ $? == 0 ] ; then
 	#check branche master 
 	# wget https://github.com/ersplus/solibuntu/archive/master.zip
@@ -57,9 +57,9 @@ if [ $? == 0 ] ; then
 	echo "Création des utilisateurs"
 
 	# Ajout du compte gestionnaire Solibuntu
-	useradd -m gestionnaire
-	echo -e "AdminAsso\nAdminAsso" | passwd gestionnaire
-	usermod -c "Gestionnaire Solibuntu" gestionnaire
+	#useradd -m gestionnaire
+	#echo -e "AdminAsso\nAdminAsso" | passwd gestionnaire
+	#usermod -c "Gestionnaire Solibuntu" gestionnaire
 
 	#-------------------------------------------------------
 	# Autologin session Invité

@@ -1,6 +1,13 @@
 sudo chroot squashfs
 echo " ================================= Après chroot ========================================="
 cd Solibuntu
+useradd -m administrateur
+echo -e "AdminSolibuntu\nAdminSolibuntu" | passwd administrateur
+usermod -c "Administrateur Solibuntu" administrateur
+
+useradd -m gestionnaire
+echo -e "AdminAsso\nAdminAsso" | passwd gestionnaire
+usermod -c "Gestionnaire Solibuntu" gestionnaire
 echo " ================================= Avant install ========================================"
 ./install.sh iso
 echo " ================================= Après install ========================================"
