@@ -125,6 +125,9 @@ mv preseed_test.iso $local
 
 # Supprime le dossier "FichierIso devenu inutile"
 cd $local/
+
+isohybrid preseed_test.iso
+
 rm -rf FichierIso/ 
 rm -rf squashfs/
 
