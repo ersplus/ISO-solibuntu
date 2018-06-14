@@ -1,4 +1,5 @@
 echo " ================================= Après chroot ========================================="
+chroot squashfs
 useradd -m administrateur -s /bin/bash
 echo -e "AdminSolibuntu\nAdminSolibuntu" | passwd administrateur
 usermod -c "Administrateur Solibuntu" administrateur
