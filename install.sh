@@ -79,7 +79,7 @@ if [ $? == 0 ] ; then
 	#-------------------------------------------------------
 
 	# problématique des licences !!
-
+	apt-get install debconf-utils
 	while read line; do
 		echo $line
 		echo $line | debconf-set-selections
