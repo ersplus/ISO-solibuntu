@@ -9,7 +9,7 @@ useradd -m gestionnaire -s /bin/bash
 echo -e "AdminAsso\nAdminAsso" | passwd gestionnaire
 usermod -c "Gestionnaire Solibuntu" gestionnaire
 echo " ================================= Avant install ========================================"
-./install.sh iso
+./Solibuntu/install.sh iso
 echo " ================================= Après install ========================================"
 umount -lf /sys
 umount -lf /proc
