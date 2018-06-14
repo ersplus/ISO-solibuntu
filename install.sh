@@ -81,6 +81,7 @@ if [ $? == 0 ] ; then
 	# problématique des licences !!
 
 	while read line; do
+		echo $line
 		echo $line | debconf-set-selections
 	done < /opt/borne/share/setselection.txt
 

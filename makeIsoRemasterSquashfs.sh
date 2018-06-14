@@ -47,6 +47,7 @@ mkdir $local/squashfs/Solibuntu/
 
 # Déplace le script de post install dans le dossier Solibuntu
 cp -v $postInstall $local/squashfs/Solibuntu/install.sh
+cp -v $local/setselection.txt $local/squashfs/Solibuntu/
 
 #-----------------------------------------------------------
 # Installation locale de solibuntu
