@@ -10,4 +10,10 @@ usermod -c "Gestionnaire Solibuntu" gestionnaire
 echo " ================================= Avant install ========================================"
 ./install.sh iso
 echo " ================================= Après install ========================================"
+umount -lf /sys
+umount -lf /proc
+umount -lf /dev/pts
+umount -lf /dev #dans le cas où on a exécuté sudo mount --bind /dev squashfs/dev pour le problème avec apt
+rm /etc/resolv.conf
+rm /etc/hosts
 exit
