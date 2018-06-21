@@ -54,12 +54,11 @@ if [ $? == 0 ] ; then
 	# Création du compte gestionnaire
 	#-------------------------------------------------------
 
-	echo "Création des utilisateurs"
+	echo "Copie des profils par defaut des utilisateurs"
 
-	# Ajout du compte gestionnaire Solibuntu
-	#useradd -m gestionnaire
-	#echo -e "AdminAsso\nAdminAsso" | passwd gestionnaire
-	#usermod -c "Gestionnaire Solibuntu" gestionnaire
+	# exemple sur le code Solipi
+
+
 
 	#-------------------------------------------------------
 	# Autologin session Invité
@@ -122,10 +121,14 @@ if [ $? == 0 ] ; then
 
 	# hp-plugin -i
 
+	echo "Gestion des droits administrateur et gestionnaire"
+
 	#
-	# Sudoers copy du fichier de configuration
+	# Sudoers copy du fichier de configuration et validation
 	# /etc/sudoers
 	#
+
+	echo "Visionneuse d image"
 
 
 	#
@@ -146,6 +149,8 @@ if [ $? == 0 ] ; then
 	#-------------------------------------------------------
 	# Navigateur par défaut Firefox
 	# Proxy, Gestion de l'historique, page de démarrage etc...
+
+	# voir Xavier pour docs
 	xdg-settings set default-web-browser firefox-browser.desktop
 	cp -r $repinstallation/share/firefox/syspref.js /etc/firefox/syspref.js 
 
