@@ -5,7 +5,7 @@ Créer une iso solibuntu :
 
 1/ Récupérez ce projet :
 
-git clone https://github.com/ersplus/ISO-Solibuntu.git
+git clone https://github.com/ersplus/ISO-solibuntu.git
 
 2/ Placez dans le répertoir du projet l'image de xubuntu 18.04 64 bits
 
