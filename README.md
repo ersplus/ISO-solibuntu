@@ -7,7 +7,7 @@ Créer une iso solibuntu :
 
 git clone https://github.com/ersplus/ISO-solibuntu.git
 
-2/ Placez dans le répertoire du projet l'image de xubuntu 18.04 64 bits
+2/ Placez dans le répertoire du projet l'image de Xubuntu 18.04 64 bits (https://xubuntu.org/)
 
 cd InstallationAutoXubuntu/
 
