@@ -1,13 +1,13 @@
 # InstallationAutoSolibuntu
 Créer une iso solibuntu :
 
-/!\ Veuillez réaliser ces étapes dans une machine virtuelle xubuntu 18.04 /!\
+/!\ Veuillez réaliser ces étapes dans une machine virtuelle Xubuntu 18.04 /!\
 
-1/ Récupérez ce projet :
+1/ Récupérez les sources du projet :
 
 git clone https://github.com/ersplus/ISO-solibuntu.git
 
-2/ Placez dans le répertoir du projet l'image de xubuntu 18.04 64 bits
+2/ Placez dans le répertoire du projet l'image de xubuntu 18.04 64 bits
 
 cd InstallationAutoXubuntu/
 
