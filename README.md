@@ -1,5 +1,4 @@
 # Créer une iso solibuntu
-Créer une iso solibuntu :
 
 /!\ Veuillez réaliser ces étapes dans une machine virtuelle Xubuntu 18.04 /!\
 
