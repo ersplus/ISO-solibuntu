@@ -1,14 +1,17 @@
-zenity --info --width=500 --height=75 --text="Attention - Message Important
+zenity --info --width=500 --height=50 --ok-label="Accepter les licences et continuer" --text="Validation des licences
 
-Si vous poursuivez cette installation toutes les données de cet ordinateurs seront \
-supprimées afin de pouvoir installer Solibuntu.\
-Si vous désirez annuler cette installation veuillez éteindre votre ordinateur et \
-retirer la clé immédiatement.."\
+En choisissant de poursuivre l'installation, vous reconnaissez accepter la licence \
+d'utilisation des polices de caractères Microsoft disponible à l'adresse :
+http://corefonts.sourceforge.net/eula.htm
 
-zenity --info --width=500 --height=50 --text="Validation des licences
+L'installation complète de Solibuntu peut être longue du fait du nombre important \
+de logiciels à installer. Veuillez ne pas interrompre le processus en cours ..."
 
-En choisissant de poursuivre l'installation vous reconnaissez accepter la licence \
-d'utilisation des polices de caractères Microsoft disponible à cette adresse : \
-http://corefonts.sourceforge.net/eula.htm"
+zenity --info --width=500 --height=75 --ok-label="Supprimer les données" --text="Attention - Message Important
 
-zenity --info --width=200 --text "L'installation de Solibuntu est en cours, veuillez patienter..."
+Si vous poursuivez cette installation, toutes les données de cet ordinateur seront \
+supprimées afin de pouvoir installer Solibuntu. \
+Si vous désirez annuler cette installation, veuillez éteindre votre ordinateur et \
+retirer la clé avant de redémarrer."\
+
+
