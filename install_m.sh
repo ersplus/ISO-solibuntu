@@ -1,7 +1,7 @@
 #! /bin/bash
 
 ### Projet Solisol.org               ###
-### Solibuntu dev                    ###
+### Solibuntu master                 ###
 ### Installation Solibuntu master    ###
 ### 28/04/2018                       ###
 
