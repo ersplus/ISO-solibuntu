@@ -1,6 +1,6 @@
 # Créer une iso solibuntu :
 
-/!\ Veuillez réaliser ces étapes dans une machine virtuelle xubuntu 18.04 /!\
+/!\ Veuillez réaliser ces étapes dans un xubuntu 18.04 (machine virtuelle ou physique) /!\
 
 1/ Récupérez ce projet :
 
@@ -22,6 +22,8 @@ sudo ./makeIsoRemasterSquashfs.sh
 
 (Il est possible que vous deviez redémarrer la VM après l'exécution de ce script)
 
-5/ Une fois ceci fait, pour que l'image puisse être copiée sur une clé usb utilisez la commande isohybrid (commande possiblement indisponible dans la machine virtuelle) ou un utilitaire de creation de support USB dédié.
+5/ Une fois ceci fait, pour que l'image puisse être copiée sur une clé usb utilisez la commande isohybrid (commande a installer 
 
-sudo isohybrid preseed_test.iso
+sudo apt install syslinux).
+
+sudo isohybrid solibuntu_master.iso
