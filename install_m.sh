@@ -13,7 +13,7 @@ repinstallation="/opt/borne"
 #-------------------------------------------------------
 
 cd /opt/
-# Check branche dev
+# Check branche master
 wget https://github.com/ersplus/solibuntu/archive/master.zip -O /opt/master.zip
 
 if [ $? == 0 ] ; then
