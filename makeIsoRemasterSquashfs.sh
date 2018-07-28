@@ -1,8 +1,14 @@
 #!/bin/bash
 
+### Projet Solisol.org               ###
+### Solibuntu master                 ###
+### Création ISO Solibuntu           ###
+### 28/07/2018                       ###
+
+# Choix de la branche pour générer l'ISO
 choix=`zenity --list --radiolist --column "Choix" --column "Version" FALSE "Master" FALSE "Dev"`
 
-# Définit dans quel dossier est exécuté le script
+# Définit dans quel dossier est exécuté le script  : dossier courant
 local=`pwd`
 
 # Récupère l'iso, le fichier de preseed et le isolinux.cfg modifié
@@ -17,10 +23,12 @@ case ${choix} in
 		postInstall="$local/install_d.sh"
 	;;
 esac
+
 preInstall="$local/preInstall.sh"
 
+# Warning sur prérequis squashfs-tools schroot genisoimage et isohybrid (syslinux-utils)
 echo "Les paquets suivants doivent être installés : \n"
-echo "squashfs-tools schroot genisoimage"
+echo "squashfs-tools schroot genisoimage et isohybrid (syslinux-utils)"
 
 # Décompresse l'iso dans le dossier "FichierIso"
 #7z x -o$local/FichierIso $iso
@@ -51,7 +59,7 @@ umount /mnt
 # Modification du système de fichier préinstallé ici
 #-----------------------------------------------------------
 
-# Rajoute le dossier Solibuntu
+# Rajoute les fichiers du projet Solibuntu
 mkdir $local/squashfs/Solibuntu/
 
 # Déplace le script de post install dans le dossier Solibuntu
@@ -85,6 +93,7 @@ nohup bash < crt.sh
 echo "Fin du bash"
 
 echo "Edition du filesystem.manifest"
+
 chmod a+w $local/FichierIso/casper/filesystem.manifest
 chroot squashfs dpkg-query -W --showformat='${Package} ${Version}\n' > $local/FichierIso/casper/filesystem.manifest
 chmod go-w $local/FichierIso/casper/filesystem.manifest
@@ -93,6 +102,7 @@ echo "Exit temporaire nuhumber one"
 
 #exit
 #return 0
+
 #-----------------------------------------------------------
 # Fin des modifications du système de fichier préinstallé
 #-----------------------------------------------------------
@@ -125,7 +135,7 @@ chmod +x $local/FichierIso/preInstall.sh
 cd $local/FichierIso
 sudo bash -c "find . -path ./isolinux -prune -o -type f -not -name md5sum.txt -print0 | xargs -0 md5sum | tee $"
 
-# Crée une image nommée "preseed_test.iso" à partir du dossier "FichierIso"
+# Crée une image nommée "solibuntu_master.iso" ou "solibuntu_dev.iso" à partir du dossier "FichierIso"
 cd $local/FichierIso
 case ${choix} in
 	"Master")
@@ -139,16 +149,12 @@ case ${choix} in
 		mv solibuntu_dev.iso $local
 	;;
 esac
-#genisoimage -r -J -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o preseed_test.iso .
-#mkisofs -J -r -v -o $local/preseed_test.iso -V Solibuntu -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table $local/FichierIso
 
-
-
-# Supprime le dossier "FichierIso devenu inutile"
+# Supprime le dossier "Fichier Iso" devenu inutile
 cd $local/
 
 rm -rf FichierIso/ 
 rm -rf squashfs/
 
-#Signale la fin de l'installation
-echo "Done."
+# Fin  du l'installation
+echo "Limage est désormais disponible dans le dossier $local."
