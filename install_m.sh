@@ -2,7 +2,7 @@
 
 ### Projet Solisol.org               ###
 ### Solibuntu dev                    ###
-### Installation Solibuntu dev       ###
+### Installation Solibuntu master    ###
 ### 28/04/2018                       ###
 
 
