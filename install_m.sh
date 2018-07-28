@@ -9,7 +9,7 @@
 repinstallation="/opt/borne"
 
 #-------------------------------------------------------
-#  Réccupération des sources Dev du projet
+#  Réccupération des sources MAster du projet
 #-------------------------------------------------------
 
 cd /opt/
