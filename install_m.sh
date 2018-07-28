@@ -3,7 +3,7 @@
 ### Projet Solisol.org               ###
 ### Solibuntu master                 ###
 ### Installation Solibuntu master    ###
-### 28/04/2018                       ###
+### 28/07/2018                       ###
 
 
 repinstallation="/opt/borne"
