@@ -1,14 +1,14 @@
-# Créer une iso solibuntu :
+# Créer une iso Solibuntu (solisol.org):
 
-/!\ Veuillez réaliser ces étapes dans un xubuntu 18.04 (machine virtuelle ou physique) /!\
+/!\ Veuillez réaliser ces étapes dans un (x)ubuntu 18.04 (machine virtuelle ou physique) /!\
 
-1/ Récupérez ce projet :
+1/ Récupérez les sources de ce projet :
 
-git clone https://github.com/ersplus/InstallationAutoXubuntu.git
+git clone https://github.com/ersplus/ISO-solibuntu.git
 
-2/ Placez dans le répertoir du projet l'image de xubuntu 18.04 64 bits
+2/ Placez dans le répertoire du projet l'image de Xubuntu 18.04 64 bits
 
-cd InstallationAutoXubuntu/
+cd ISO-solibuntu/
 
 wget http://ftp.free.fr/mirrors/ftp.xubuntu.com/releases/18.04/release/xubuntu-18.04-desktop-amd64.iso
 
