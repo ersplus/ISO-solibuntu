@@ -18,6 +18,8 @@ sudo apt-get update && sudo apt-get install squashfs-tools schroot genisoimage
 
 4/ Exécutez le script makeIsoRemasterSquashfs
 
+sudo chmod +x makeIsoRemasterSquashfs.sh
+
 sudo ./makeIsoRemasterSquashfs.sh
 
 (Il est possible que vous deviez redémarrer la VM après l'exécution de ce script)
