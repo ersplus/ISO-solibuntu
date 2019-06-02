@@ -34,7 +34,7 @@ df -h
 
 Copier l'iso de Solibuntu sur une clé USB :
 
-sudo dd if=solibuntu_master.iso of=/dev/sd?
+sudo dd if=solibuntu_master.iso of=/dev/sd? bs=4k
 
 
 Scripts 
